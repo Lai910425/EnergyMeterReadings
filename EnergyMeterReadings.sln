@@ -1,0 +1,36 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AD55764E-465E-4484-A3E3-43A525C0D88E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnergyMeter.Api", "src\EnergyMeter.Api\EnergyMeter.Api.csproj", "{E6834E63-FE42-4E85-95AB-49C1F7DA3DFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0E2575AC-51AC-4E1A-B729-9907A46B6A39}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnergyMeter.Tests", "tests\EnergyMeter.Tests\EnergyMeter.Tests.csproj", "{28DFAFBB-DF39-4453-B702-D5D8AC331085}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6834E63-FE42-4E85-95AB-49C1F7DA3DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6834E63-FE42-4E85-95AB-49C1F7DA3DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6834E63-FE42-4E85-95AB-49C1F7DA3DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6834E63-FE42-4E85-95AB-49C1F7DA3DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28DFAFBB-DF39-4453-B702-D5D8AC331085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28DFAFBB-DF39-4453-B702-D5D8AC331085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28DFAFBB-DF39-4453-B702-D5D8AC331085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28DFAFBB-DF39-4453-B702-D5D8AC331085}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E6834E63-FE42-4E85-95AB-49C1F7DA3DFF} = {AD55764E-465E-4484-A3E3-43A525C0D88E}
+		{28DFAFBB-DF39-4453-B702-D5D8AC331085} = {0E2575AC-51AC-4E1A-B729-9907A46B6A39}
+	EndGlobalSection
+EndGlobal

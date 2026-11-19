@@ -1,0 +1,46 @@
+@baseUrl = http://localhost:5080
+
+### Create a site
+POST {{baseUrl}}/api/sites
+Content-Type: application/json
+
+{ "name": "Johannesburg Head Office" }
+
+### List sites
+GET {{baseUrl}}/api/sites
+
+### Create a meter at site 1
+POST {{baseUrl}}/api/sites/1/meters
+Content-Type: application/json
+
+{ "serialNumber": "EM-0001" }
+
+### List meters at site 1
+GET {{baseUrl}}/api/sites/1/meters
+
+### Record readings for meter 1
+POST {{baseUrl}}/api/meters/1/readings
+Content-Type: application/json
+
+{ "timestampUtc": "2026-11-03T08:00:00Z", "valueKwh": 12600.5 }
+
+### Same timestamp again -> 409 Conflict
+POST {{baseUrl}}/api/meters/1/readings
+Content-Type: application/json
+
+{ "timestampUtc": "2026-11-03T08:00:00Z", "valueKwh": 12601.0 }
+
+### Timestamp without a zone -> 400 Bad Request
+POST {{baseUrl}}/api/meters/1/readings
+Content-Type: application/json
+
+{ "timestampUtc": "2026-11-03T09:00:00", "valueKwh": 12601.0 }
+
+### List readings (optional inclusive range)
+GET {{baseUrl}}/api/meters/1/readings?fromUtc=2026-11-01T00:00:00Z&toUtc=2026-11-02T23:59:59Z
+
+### Consumption summary
+GET {{baseUrl}}/api/meters/1/summary?fromUtc=2026-11-01T00:00:00Z&toUtc=2026-11-02T23:59:59Z
+
+### fromUtc after toUtc -> 400
+GET {{baseUrl}}/api/meters/1/summary?fromUtc=2026-11-05T00:00:00Z&toUtc=2026-11-01T00:00:00Z

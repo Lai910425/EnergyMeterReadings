@@ -1,0 +1,16 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: energymeter-sql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      MSSQL_SA_PASSWORD: "EnergyMeter_Dev_123!"
+    ports:
+      # Host port 14333 so it doesn't clash with a SQL Server already installed on 1433.
+      - "14333:1433"
+    volumes:
+      - energymeter-sql-data:/var/opt/mssql
+
+volumes:
+  energymeter-sql-data:
